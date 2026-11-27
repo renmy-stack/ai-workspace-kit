@@ -36,6 +36,9 @@ agent: agent
    - `/init-workspace` は、作業環境だけを足し直したいとき用に残す
 5. **input/**: 置き方は自由（固定サブフォルダなし）。利用者が作った構成は尊重する。直下に散らかったとき・頼まれたときだけ AI が整理を提案し、承認後に移動する。中身は変更しない
 6. **成果物**: `output/NN_成果物名/` に `instruction.md`・`work/scripts/`・`work/data/`・成果物をセットで置く
+   - 作り方は `workspace-template/output/README.md` の「成果物を作る手順（AI向け）」（計画の確認は1回にまとめる）
+   - `instruction.md` の必須は 目的・インプット・成果物・完了条件 の4項目。他は任意
+   - 根拠と確度（`[事実]` `[推測]` `[未確認]`）の書き方は `workspace-template/AGENTS.md`
 7. **役割分担**: 原則、仮想秘書自身が作業する。サブエージェントは必要な場合のみ
 
 ## やること（この順で、各段階で利用者に報告・確認する）
@@ -52,6 +55,9 @@ agent: agent
    - プロンプトファイルの書式（`agent: agent` か、旧書式の `mode: agent` か）
    - ユーザープロンプトから、ワークスペース外（キット）のファイルを読めるか
    - サブエージェント機能の対応状況
+   - **Excel 成果物の作り方**: 社内PCで使えるもの（Python と openpyxl、PowerShell と Excel COM、社内の Excel 様式など）を確認し、作り方を利用者と決める
+     - 候補: 中身をまず Markdown / CSV で作り、変換スクリプトを `work/scripts/` に置いて .xlsx にする／社内様式の .xlsx に流し込む
+     - 決まったら `workspace-template/output/README.md` の「成果物を作る手順（AI向け）」に追記する
 4. **会社の標準フォルダ構成を聞き、`workspace-template/input/README.md` の「整理の参考にするフォルダ構成」に書く**
 5. **合意できたものから実装し、試験用フォルダで動作確認する**（空のフォルダ／既存ファイルがあるフォルダ／断られた場合）
 

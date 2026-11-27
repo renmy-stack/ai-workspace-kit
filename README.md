@@ -74,5 +74,6 @@ AIエージェント初心者でも、標準のフォルダ構成とルールに
 - [ ] 会社の標準フォルダ構成を `workspace-template/input/README.md` に記入
 - [ ] Copilot の版によるプロンプトファイルの書式（`agent: agent` か、旧書式の `mode: agent` か）
 - [ ] Copilot のユーザープロンプトから、ワークスペース外（キット）のファイルを読めるか
+- [ ] Excel 成果物の作り方（社内PCで使えるツールを確認して決める）
 - [ ] AGENTS.md・instruction.md の内容確定
 - [ ] 仮想秘書（Copilot 版）への組み込み
